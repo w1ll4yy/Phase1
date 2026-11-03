@@ -1,1 +1,33 @@
-style.css
+body{
+    background-color: slategrey;
+}
+
+#one{
+    font-size:10px;
+    font-family:Arial;
+    font-style:italic;
+}
+
+#two{
+    font-size:10px;
+    font-family:Arial;
+}
+
+#three{
+    font-size:15px;
+    font-family:Arial;
+}
+
+#four{
+    font-size:20px;
+    font-family:Arial;
+    text-shadow:3px 3px 4px hsl(207, 64%, 32%), -3px -3px 4px hsl(115, 62%, 53%);
+    opacity:0.8;
+}
+
+.a {
+    opacity:.5;
+}
+.b {
+    opacity:.9;
+}
