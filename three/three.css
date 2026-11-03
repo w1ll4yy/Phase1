@@ -1,0 +1,44 @@
+.dropdown button{
+    background-color:rgb(23, 62, 85);
+    border-radius:5px;
+    border:3px solid;
+    cursor: pointer;
+}
+
+.dropdown a{
+    display:inline-block;
+    display:block;
+    color:black;
+    text-decoration:none;
+    padding: 15px 20px;
+}
+.dropdown .StudentProfile{
+    display:none;
+    position:absolute;
+    background-color: rgb(72, 198, 207);
+    min-width:100px;
+}   
+.dropdown .StudentProfile #Stucy{
+    border:2px solid;
+    margin:1px;
+}
+
+.dropdown .StudentProfile #Stacy{
+    border:2px solid;
+    margin:1px;
+}
+   
+.dropdown .StudentProfile #Cuffy{
+    border:2px solid;
+    margin:1px;
+}
+
+.dropdown:hover .StudentProfile {
+    display:block;
+}
+.dropdown:hover button {
+    background-color:rgb(96, 142, 158)
+}
+.dropdown:hover a:hover{
+    background-color:rgb(15, 57, 59)
+}
