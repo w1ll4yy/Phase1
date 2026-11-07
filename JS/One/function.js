@@ -1,2 +1,2 @@
-document.getElementById("title").textContent= 'Bruh';
+document.getElementById("title").textContent = 'Bruh';
 
