@@ -1,0 +1,68 @@
+
+/* body color */
+body{
+    background-color: rgb(45, 45, 45);
+    height:100dvh;
+
+}
+/* layout for navigation bar */
+.navbar{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 3px solid;
+
+    margin: 0 auto;
+}
+/* list styles */
+.nav{
+    list-style: none;
+    display:flex;
+    
+    gap:10px;
+
+}
+/* links */
+.nav-link{
+    text-decoration: none;
+    color: white;
+    font-size:20px;
+}
+
+/* google header */
+/* section alighnment */
+section{
+    display:flex;
+    justify-content: center;
+    border:3px solid;
+
+    min-height:94dvh;
+    margin:0px;
+    padding:0px;
+}
+
+/* container alignment */
+
+.container{
+    height:80dvh;
+    width:100%;
+    border:3px solid;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container ul{
+    list-style:none;
+    display:flex;
+
+    border:3px solid;
+}
+
+/* Google style */
+
+.Google{
+    font-size:8rem;
+}

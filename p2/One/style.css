@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(85, 54, 6);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height:100dvh;
+}
+
+.container{
+    min-height:60dvh;
+    border:2px solid;
+
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+
+.btn{
+    font-size: 5em;
+    border:3px solid;
+    border-radius:20px;
+
+    background-color: rgb(71, 41, 41);
+
+}
+
+#image{
+    border:10px solid;
+    border-radius:10px;
+}
+
+.btn:hover{
+    background-color:  hsl(236, 27%, 22%);
+    animation:
+        glow 3s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes glow{
+    0% {
+        box-shadow: -10px 10px 12px black;
+        scale:1.05;
+    }
+    50%{
+        box-shadow: -12px 12px 15px rgb(20, 91, 141);
+    }
+}
