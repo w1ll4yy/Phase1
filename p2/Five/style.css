@@ -1,0 +1,22 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg: #464442;
+    --line: #e02020;
+    --gap: 1.5rem;
+    --pad: 1rem;
+    --sidebar-w: 10%;
+}
+
+body{
+    display:grid;
+    grid-template-rows: auto 1fr;
+    min-height:100vh;
+}
+
+header{
+    display:flex;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+

@@ -1,0 +1,124 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --border: 2px white solid;
+    --radius: 10px;
+    --background-color: darkgreen;
+}
+
+/* HEADER */
+body{
+    background-color: rgb(90, 82, 82);
+    min-height:100vh;
+
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+    margin:0;
+
+}
+header > * { outline: 1px dashed yellow; font-size:1.4rem;}
+main > * { outline: 1px dashed yellow; font-size:1.4rem;}
+section > * { outline: 1px dashed yellow; font-size:1.4rem;}
+aside > * { outline: 1px dashed yellow; font-size:1.4rem;}
+footer > * { outline: 1px dashed yellow; font-size:1.4rem;}
+.video-container, .logo, .caption{
+    outline: 1px dashed yellow; font-size:1.4rem;
+}
+
+header{
+    border:var(--border);
+    border-radius: var(--radius);
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding:1.05rem;
+    position: sticky;
+}
+
+.container, .container-bar, .container-link{
+    position:relative;
+}
+.container{
+    left:100px;
+}
+.container-bar{
+    display:flex;
+    gap:2rem;
+}
+.container-link{
+    display:flex;
+    justify-content: space-evenly;
+    gap:2rem;
+    right:100px;
+}
+
+
+/* END OF HEADER _________________________________ */
+
+
+/* MAIN ________________________ */
+main{
+    border:var(--border);
+    border-radius: var(--radius);
+
+    display:grid;
+    grid-template-columns: 250px 1fr;
+}
+
+aside{
+    order:-1;
+
+    padding:1.1rem;
+    gap:1.5rem;
+}
+
+.boxes{
+    padding:10px;
+}
+
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-content: start;   /* see note 2 */
+    padding: 1.2rem;
+}
+
+.video-container{
+    display:grid;
+    grid-template-rows: 1fr auto;
+    font-size: 1.3em;
+    padding:1.1rem;
+
+}
+
+.logo{
+    min-height:150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:2em;
+}
+
+
+
+/* END OF MAIN _______________________ */
+
+
+footer{
+    border:var(--border);
+    border-radius: var(--radius);
+    display:flex;
+
+    justify-content: space-evenly;
+}
+
+.classes{
+    font-size:1.5rem;
+    padding:1.2rem;
+}

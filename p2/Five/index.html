@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layout Practice</title>
+  <style>
+    /* ---------- 1. RESET ---------- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ---------- 2. VARIABLES (change these and watch the layout react) ---------- */
+    :root {
+      --bg: #464442;
+      --line: #e02020;
+      --gap: 1.5rem;
+      --pad: 1rem;
+      --sidebar-w: 10%;
+    }
+
+    /* ---------- 3. VISUAL DEBUGGING ---------- */
+    /* Every element gets a red outline, like your wireframe.
+       outline does not affect layout size, border does. */
+    * { outline: 2px solid var(--line); }
+
+    /* ---------- 4. PAGE SHELL ---------- */
+    body {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;   /* header = content height, main = rest */
+      background: var(--bg);
+      color: #fff;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* ---------- 5. HEADER: A | B | C ---------- */
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;  /* B is always truly centered */
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--pad) 2rem;
+      position: sticky;                     /* stays visible on scroll */
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .home    { justify-self: start; width: 150px; height: 50px; }
+    .search  { display: flex; gap: .5rem; width: min(500px, 50vw); }
+    .search input  { flex: 1; height: 45px; }   /* flex: 1 = take leftover space */
+    .search button { width: 55px; height: 45px; }
+    .actions { justify-self: end; display: flex; gap: 1rem; }
+    .actions button { width: 50px; height: 40px; }
+
+    /* ---------- 6. MAIN: ASIDE | SECTION ---------- */
+    main {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+    }
+    aside {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: var(--pad);
+      position: sticky;                     /* sidebar follows while cards scroll */
+      top: 80px;                            /* roughly the header height */
+      align-self: start;                    /* required, or sticky has no room to move */
+    }
+    aside .item { height: 50px; }
+
+    /* ---------- 7. SECTION: RESPONSIVE CARD GRID ---------- */
+    section {
+      display: grid;
+      /* auto-fill + minmax: as many columns as fit, each at least 250px.
+         No media query needed. */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--gap);
+      padding: var(--gap);
+      align-content: start;
+    }
+
+    /* ---------- 8. CARD: BIG BOX + SMALL LABEL ---------- */
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      padding: .5rem;
+    }
+    .card .box   { aspect-ratio: 4 / 3; }   /* same shape at any width */
+    .card .label { height: 2.5rem; }
+
+    /* ---------- 9. MOBILE ---------- */
+    @media (max-width: 700px) {
+      header { grid-template-columns: 1fr; gap: .75rem; }
+      .home, .actions { justify-self: center; }
+      .search { width: 100%; }
+      main { grid-template-columns: 1fr; }
+      aside {
+        position: static;
+        flex-direction: row;           /* sidebar becomes a horizontal strip */
+        overflow-x: auto;
+      }
+      aside .item { flex: 0 0 120px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="home"></div>
+
+    <div class="search">
+      <input type="search" aria-label="Search">
+      <button type="button"></button>
+    </div>
+
+    <div class="actions">
+      <button type="button"></button>
+      <button type="button"></button>
+      <button type="button"></button>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </aside>
+
+    <section>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+      <article class="card"><div class="box"></div><div class="label"></div></article>
+    </section>
+  </main>
+
+</body>
+</html>
